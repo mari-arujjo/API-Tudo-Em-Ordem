@@ -11,6 +11,10 @@
       "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\lucas.floripes\\desktop\\mariprojetos\\api-ordem-de-servico\\api\\api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\lucas.floripes\\desktop\\mariprojetos\\api-ordem-de-servico\\api\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -50,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -71,6 +75,23 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "api.http",
+              "DocumentMoniker": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\api.http",
+              "RelativeDocumentMoniker": "api\\api.http",
+              "ToolTip": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\api.http",
+              "RelativeToolTip": "api\\api.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-06-24T14:25:00.835Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -95,11 +116,12 @@
               "RelativeToolTip": "api\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-24T13:30:02.48Z"
+              "WhenOpened": "2025-06-24T13:30:02.48Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "UsuarioDto.cs",
               "DocumentMoniker": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Dtos\\UsuarioDto.cs",
               "RelativeDocumentMoniker": "api\\Dtos\\UsuarioDto.cs",
@@ -111,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "IUsuarioRepository.cs",
               "DocumentMoniker": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Interfaces\\IUsuarioRepository.cs",
               "RelativeDocumentMoniker": "api\\Interfaces\\IUsuarioRepository.cs",
@@ -123,7 +145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "api\\Models\\Usuario.cs",
@@ -135,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "UsuarioQueryObject.cs",
               "DocumentMoniker": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Helper\\UsuarioQueryObject.cs",
               "RelativeDocumentMoniker": "api\\Helper\\UsuarioQueryObject.cs",
@@ -147,7 +169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UsuarioRepository.cs",
               "DocumentMoniker": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Repository\\UsuarioRepository.cs",
               "RelativeDocumentMoniker": "api\\Repository\\UsuarioRepository.cs",
@@ -159,7 +181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "api\\Controllers\\UsuarioController.cs",
@@ -171,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AtualizarUsuarioDto.cs",
               "DocumentMoniker": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Dtos\\AtualizarUsuarioDto.cs",
               "RelativeDocumentMoniker": "api\\Dtos\\AtualizarUsuarioDto.cs",
@@ -183,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CriarUsuarioDto.cs",
               "DocumentMoniker": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Dtos\\CriarUsuarioDto.cs",
               "RelativeDocumentMoniker": "api\\Dtos\\CriarUsuarioDto.cs",
