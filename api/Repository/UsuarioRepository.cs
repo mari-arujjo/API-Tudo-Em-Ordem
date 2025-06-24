@@ -99,9 +99,11 @@ namespace api.Repository
             }
 
             // calcula quantos itens devem ser pulados antes de começar a listar os resultados
-            var skipNumber = (query.num_pag -1) * query.tam_pag;
-          // itens a pular = (pagina atual - 1) * tamanho da pag
-            return await user.Skip(skipNumber).Take(query.tam_pag).ToListAsync();
+            //var skipNumber = (query.num_pag -1) * query.tam_pag;
+            // itens a pular = (pagina atual - 1) * tamanho da pag
+            //return await user.Skip(skipNumber).Take(query.tam_pag).ToListAsync();
+
+            return await user.ToListAsync();
         }
 
 
