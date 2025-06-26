@@ -31,7 +31,7 @@ namespace api.Controllers
                 return BadRequest(ModelState);
 
             var users = await _usuarioRep.GetAllAsync(query); 
-            var usersDto = users.Select(u => u.ConverterParaUsuarioDto());
+            var usersDto = users.Select(u => u.ConverterParaUsuarioDto()).OrderBy(dto => dto.id_usuario); 
 
             return Ok(usersDto);
         }
