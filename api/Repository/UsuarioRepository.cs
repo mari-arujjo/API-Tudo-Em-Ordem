@@ -125,6 +125,7 @@ namespace api.Repository
             userModel.nome = updateDto.nome;
             userModel.nivel_acesso = updateDto.nivel_acesso;
             userModel.senha = updateDto.senha;
+            userModel.foto_url = updateDto.foto_url;
             await _dbContext.SaveChangesAsync();
             return userModel;
         }
