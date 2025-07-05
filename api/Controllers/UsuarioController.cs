@@ -82,6 +82,22 @@ namespace api.Controllers
             return Ok(userModel.ConverterParaUsuarioDto());
         }
 
+        [HttpPut]
+        [Route("{id:int}/foto")]
+        public async Task<IActionResult> AtualizarFotoUsuario([FromRoute] int id, [FromBody] AtualizarFotoDto updateDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var userModel = await _usuarioRep.UpdateProfileImage(id, updateDto);
+            if (userModel == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(userModel.ConverterParaUsuarioDto());
+        }
+
 
         [HttpDelete]
         [Route("{id:int}")]

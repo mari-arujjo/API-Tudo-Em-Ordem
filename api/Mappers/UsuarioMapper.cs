@@ -26,7 +26,7 @@ namespace api.Mappers
                 usuario = usuarioDto.usuario,
                 nome = usuarioDto.nome,
                 nivel_acesso = usuarioDto.nivel_acesso,
-                foto_url = usuarioDto.foto_url,
+                foto_url = usuarioDto.foto_url ?? string.Empty,
                 senha = usuarioDto.senha
 
             };

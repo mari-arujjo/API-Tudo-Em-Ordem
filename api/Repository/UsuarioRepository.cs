@@ -129,5 +129,18 @@ namespace api.Repository
             await _dbContext.SaveChangesAsync();
             return userModel;
         }
+
+        public async Task<Usuario?> UpdateProfileImage(int id, AtualizarFotoDto updateDto)
+        {
+            var userModel = await _dbContext.USERS.FirstOrDefaultAsync(x => x.id_usuario == id);
+            if (userModel == null)
+            {
+                return null;
+            }
+            userModel.foto_url = updateDto.foto_url;
+            await _dbContext.SaveChangesAsync();
+            return userModel;
+        }
+
     }
 }
