@@ -18,8 +18,9 @@ namespace api.Dtos
         public int nivel_acesso { get; set; }
 
         [Required]
-        [MinLength(8, ErrorMessage = "A senha deve ter no mínimo 8 carcateres")]
+        [MinLength(5, ErrorMessage = "A senha deve ter no mínimo 8 carcateres")]
         [MaxLength(20, ErrorMessage = "Limite de carcateres: 20")]
         public string senha { get; set; } = string.Empty;
+        public string foto_url { get; set; } = string.Empty;
     }
 }
