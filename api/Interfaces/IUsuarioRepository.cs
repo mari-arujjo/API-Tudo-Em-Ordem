@@ -12,5 +12,6 @@ namespace api.Interfaces
         Task<Usuario?> UpdateAsync(int id, AtualizarUsuarioDto updateDto);
         Task<Usuario?> DeleteIdAsync(int id);
         Task<Usuario?> UpdateProfileImage(int id, AtualizarFotoDto updateDto);
+        Task<Usuario?> UpdatePassowrd(int id, AtualizarSenhaDto updateDto);
     }
 }

@@ -1,4 +1,5 @@
-﻿using api.Data;
+﻿using api.Controllers;
+using api.Data;
 using api.Dtos;
 using api.Helper;
 using api.Interfaces;
@@ -18,6 +19,7 @@ namespace api.Repository
         
         public async Task<Usuario> CreateAsync(Usuario userModel)
         {
+            userModel.senha = HashSenhaController.GerarHash(userModel.senha);
             await _dbContext.USERS.AddAsync(userModel);
             await _dbContext.SaveChangesAsync();
             return userModel;
@@ -124,8 +126,20 @@ namespace api.Repository
             userModel.usuario = updateDto.usuario;
             userModel.nome = updateDto.nome;
             userModel.nivel_acesso = updateDto.nivel_acesso;
+            await _dbContext.SaveChangesAsync();
+            return userModel;
+        }
+
+        public async Task<Usuario?> UpdatePassowrd(int id, AtualizarSenhaDto updateDto)
+        {
+            var userModel = await _dbContext.USERS.FirstOrDefaultAsync(x => x.id_usuario == id);
+            if (userModel == null)
+            {
+                return null;
+            }
+            // pega oq temos no BD e atualiza com os valores fornecidos pelo cliente do sistema
             userModel.senha = updateDto.senha;
-            userModel.foto_url = updateDto.foto_url;
+            userModel.senha = HashSenhaController.GerarHash(userModel.senha);
             await _dbContext.SaveChangesAsync();
             return userModel;
         }

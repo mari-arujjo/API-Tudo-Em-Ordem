@@ -98,6 +98,22 @@ namespace api.Controllers
             return Ok(userModel.ConverterParaUsuarioDto());
         }
 
+        [HttpPut]
+        [Route("{id:int}/senha")]
+        public async Task<IActionResult> AtualizarSenhaUsuario([FromRoute] int id, [FromBody] AtualizarSenhaDto updateDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var userModel = await _usuarioRep.UpdatePassowrd(id, updateDto);
+            if (userModel == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(userModel.ConverterParaUsuarioDto());
+        }
+
 
         [HttpDelete]
         [Route("{id:int}")]
