@@ -1,18 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\",
+  "WorkspaceRootPath": "C:\\Sistema\\API-Ordem-De-Servico\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\lucas.floripes\\desktop\\mariprojetos\\api-ordem-de-servico\\api\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\repository\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\lucas.floripes\\desktop\\mariprojetos\\api-ordem-de-servico\\api\\controllers\\hashsenhacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\hashsenhacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\lucas.floripes\\desktop\\mariprojetos\\api-ordem-de-servico\\api\\dtos\\atualizarsenhadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\dtos\\atualizarsenhadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\sistema\\api-ordem-de-servico\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,41 +42,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HashSenhaController.cs",
-              "DocumentMoniker": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Controllers\\HashSenhaController.cs",
-              "RelativeDocumentMoniker": "api\\Controllers\\HashSenhaController.cs",
-              "ToolTip": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Controllers\\HashSenhaController.cs",
-              "RelativeToolTip": "api\\Controllers\\HashSenhaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T13:56:38.81Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UsuarioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Repository\\UsuarioRepository.cs",
-              "RelativeDocumentMoniker": "api\\Repository\\UsuarioRepository.cs",
-              "ToolTip": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Repository\\UsuarioRepository.cs",
-              "RelativeToolTip": "api\\Repository\\UsuarioRepository.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAIwIUAAAAJAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Sistema\\API-Ordem-De-Servico\\api\\Program.cs",
+              "RelativeDocumentMoniker": "api\\Program.cs",
+              "ToolTip": "C:\\Sistema\\API-Ordem-De-Servico\\api\\Program.cs",
+              "RelativeToolTip": "api\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAcwB0AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T13:53:27.45Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AtualizarSenhaDto.cs",
-              "DocumentMoniker": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Dtos\\AtualizarSenhaDto.cs",
-              "RelativeDocumentMoniker": "api\\Dtos\\AtualizarSenhaDto.cs",
-              "ToolTip": "C:\\Users\\lucas.floripes\\Desktop\\MariProjetos\\API-Ordem-De-Servico\\api\\Dtos\\AtualizarSenhaDto.cs",
-              "RelativeToolTip": "api\\Dtos\\AtualizarSenhaDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T13:53:23.871Z",
+              "WhenOpened": "2025-07-08T12:42:56.604Z",
               "EditorCaption": ""
             }
           ]
