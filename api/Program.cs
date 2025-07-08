@@ -11,6 +11,15 @@ builder.Services.AddDbContext<ApplicationDBContext>(options => {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")); //busca nas configs no json
 });
 
+// HABILITAR CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirLocalhost", policy =>
+    {
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 builder.Services.AddControllers(); //chama controllers
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); //chama interface e repositorio
 builder.Services.AddEndpointsApiExplorer();
@@ -26,6 +35,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// AQUI: aplicar o CORS antes dos endpoints
+app.UseCors("PermitirLocalhost");
 
 app.MapControllers();
 
