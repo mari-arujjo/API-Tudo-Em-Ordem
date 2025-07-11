@@ -2,7 +2,8 @@
 {
     public class AtualizarFotoDto
     {
-        public string foto_url { get; set; } = string.Empty;
+        public byte[]? foto { get; set; } = Array.Empty<byte>();
+
 
     }
 }

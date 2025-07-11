@@ -19,11 +19,6 @@ namespace api.Repository
         
         public async Task<Usuario> CreateAsync(Usuario userModel)
         {
-            if (string.IsNullOrWhiteSpace(userModel.foto_url))
-            {
-                userModel.foto_url = "https://fldoyzuifdwwxrtzinsb.supabase.co/storage/v1/object/sign/fotos-de-perfil/sem-foto.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV82MDEyZDE1Mi1lMDAwLTQ3NDUtYmQ3Zi1iOTI5OTZkMTlkMWYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmb3Rvcy1kZS1wZXJmaWwvc2VtLWZvdG8ucG5nIiwiaWF0IjoxNzUxNjM2NjQyLCJleHAiOjE3ODMxNzI2NDJ9.7TuEkC9FKlqyJBGwrYKYZMobIDV-fm042xpb0JtLv8k";
-            }
-
             userModel.senha = HashSenhaController.GerarHash(userModel.senha);
             await _dbContext.USERS.AddAsync(userModel);
             await _dbContext.SaveChangesAsync();
@@ -156,7 +151,7 @@ namespace api.Repository
             {
                 return null;
             }
-            userModel.foto_url = updateDto.foto_url;
+            userModel.foto = updateDto.foto;
             await _dbContext.SaveChangesAsync();
             return userModel;
         }

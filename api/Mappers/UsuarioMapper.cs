@@ -16,7 +16,7 @@ namespace api.Mappers
                 nome = usuarioModel.nome,
                 nivel_acesso = usuarioModel.nivel_acesso,
                 senha = usuarioModel.senha,
-                foto_url = usuarioModel.foto_url,
+                foto = usuarioModel.foto,
             };
         }
         public static Usuario CriarNovoUsuarioDto(this CriarUsuarioDto usuarioDto) //metodo do tipo Model e com parametro DTO
@@ -26,7 +26,7 @@ namespace api.Mappers
                 usuario = usuarioDto.usuario,
                 nome = usuarioDto.nome,
                 nivel_acesso = usuarioDto.nivel_acesso,
-                foto_url = usuarioDto.foto_url ?? string.Empty,
+                foto = usuarioDto.foto ?? Array.Empty<byte>(),
                 senha = usuarioDto.senha
 
             };

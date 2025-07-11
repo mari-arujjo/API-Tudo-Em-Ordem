@@ -11,6 +11,8 @@ namespace api.Models
         public string nome { get; set; } = string.Empty;
         public int nivel_acesso { get; set; }
         public string senha { get; set; } = string.Empty;
-        public string foto_url { get; set; } = string.Empty;
+        public byte[]? foto { get; set; } = Array.Empty<byte>();
+
+
     }
 }
