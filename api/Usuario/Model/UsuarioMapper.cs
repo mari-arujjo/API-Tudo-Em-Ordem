@@ -1,13 +1,12 @@
-﻿using api.Dtos;
-using api.Models;
+﻿using api.Usuario.Dtos;
 
-namespace api.Mappers
+namespace api.Usuario.Model
 {
     public static class UsuarioMapper
     {
         // método de extensão
         // permite adicionar um novo método a uma classe existente sem precisar modificar essa classe diretamente ou criar uma subclasse.
-        public static UsuarioDto ConverterParaUsuarioDto(this Usuario usuarioModel) // this indica que ConverterParaUsuarioDto é um método de extensão da classe Usuario
+        public static UsuarioDto ConverterParaUsuarioDto(this UsuarioModel usuarioModel) // this indica que ConverterParaUsuarioDto é um método de extensão da classe Usuario
         {
             return new UsuarioDto
             {
@@ -19,9 +18,9 @@ namespace api.Mappers
                 foto = usuarioModel.foto,
             };
         }
-        public static Usuario CriarNovoUsuarioDto(this CriarUsuarioDto usuarioDto) //metodo do tipo Model e com parametro DTO
+        public static UsuarioModel CriarNovoUsuarioDto(this CriarUsuarioDto usuarioDto) //metodo do tipo Model e com parametro DTO
         {
-            return new Usuario //para criar com .ADD() ele deve estar no formato Model, e não DTO
+            return new UsuarioModel //para criar com .ADD() ele deve estar no formato Model, e não DTO
             {
                 usuario = usuarioDto.usuario,
                 nome = usuarioDto.nome,

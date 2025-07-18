@@ -1,8 +1,9 @@
-﻿using api.Models;
+﻿using api.Fornecedor.Model;
+using api.Usuario.Model;
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlTypes;
 
-namespace api.Data
+namespace api
 
 {
     //classe gigante que permite a pesquisa sua tabelas individuais
@@ -19,7 +20,8 @@ namespace api.Data
 
 
         //DbSet<T> representa uma tabela do banco de dados
-        public DbSet<Usuario> USERS { get; set; } //“Pesquisa no banco a tabela USERS que guarde objetos da entidade Usuario.”
+        public DbSet<UsuarioModel> USERS { get; set; } //“Pesquisa no banco a tabela USERS que guarde objetos da entidade Usuario.”
+        public DbSet<FornecedorModel> FORNECEDORES { get; set; }
 
     }
 }

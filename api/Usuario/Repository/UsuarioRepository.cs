@@ -1,12 +1,10 @@
 ﻿using api.Controllers;
-using api.Data;
-using api.Dtos;
-using api.Helper;
-using api.Interfaces;
-using api.Models;
+using api.Usuario.Dtos;
+using api.Usuario.Helper;
+using api.Usuario.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace api.Repository
+namespace api.Usuario.Repository
 {
     public class UsuarioRepository : IUsuarioRepository
     {
@@ -17,7 +15,7 @@ namespace api.Repository
         }
 
         
-        public async Task<Usuario> CreateAsync(Usuario userModel)
+        public async Task<UsuarioModel> CreateAsync(UsuarioModel userModel)
         {
             userModel.senha = HashSenhaController.GerarHash(userModel.senha);
             await _dbContext.USERS.AddAsync(userModel);
@@ -26,7 +24,7 @@ namespace api.Repository
         }
 
         
-        public async Task<Usuario?> DeleteIdAsync(int id)
+        public async Task<UsuarioModel?> DeleteIdAsync(int id)
         {
             var userModel = await _dbContext.USERS.FirstOrDefaultAsync(x => x.id_usuario == id);
             // para cada usuario x da tabela, verifique se o x.id_usuario é igual ao id informado
@@ -41,7 +39,7 @@ namespace api.Repository
         }
         
 
-        public async Task<List<Usuario>> GetAllAsync(UsuarioQueryObject query)
+        public async Task<List<UsuarioModel>> ObterTodosAsync(UsuarioQueryObject query)
         {
             var user = _dbContext.USERS.AsQueryable();
             // AsQueyable -> execução adiada: a consulta só será enviada ao banco quando chamar o ToListAsync();
@@ -109,13 +107,13 @@ namespace api.Repository
         }
 
 
-        public async Task<Usuario?> GetByIdAsync(int id)
+        public async Task<UsuarioModel?> ObterPorIdAsync(int id)
         {
             return await _dbContext.USERS.FindAsync(id);
         }
 
 
-        public async Task<Usuario?> UpdateAsync(int id, AtualizarUsuarioDto updateDto)
+        public async Task<UsuarioModel?> UpdateAsync(int id, AtualizarUsuarioDto updateDto)
         {
             var userModel = await _dbContext.USERS.FirstOrDefaultAsync(x => x.id_usuario == id);
             if (userModel == null)
@@ -130,7 +128,7 @@ namespace api.Repository
             return userModel;
         }
 
-        public async Task<Usuario?> UpdatePassowrd(int id, AtualizarSenhaDto updateDto)
+        public async Task<UsuarioModel?> UpdateSenha(int id, AtualizarSenhaDto updateDto)
         {
             var userModel = await _dbContext.USERS.FirstOrDefaultAsync(x => x.id_usuario == id);
             if (userModel == null)
@@ -144,7 +142,7 @@ namespace api.Repository
             return userModel;
         }
 
-        public async Task<Usuario?> UpdateProfileImage(int id, AtualizarFotoDto updateDto)
+        public async Task<UsuarioModel?> UpdateFotoDePerfil(int id, AtualizarFotoDto updateDto)
         {
             var userModel = await _dbContext.USERS.FirstOrDefaultAsync(x => x.id_usuario == id);
             if (userModel == null)

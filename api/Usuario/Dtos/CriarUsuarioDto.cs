@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace api.Dtos
+namespace api.Usuario.Dtos
 {
     public class CriarUsuarioDto
     {

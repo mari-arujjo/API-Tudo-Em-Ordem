@@ -1,13 +1,12 @@
-﻿using api.Data;
-using api.Dtos;
-using api.Helper;
-using api.Interfaces;
-using api.Mappers;
+﻿using api.Usuario.Dtos;
+using api.Usuario.Helper;
+using api.Usuario.Model;
+using api.Usuario.Repository;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace api.Controllers
+namespace api.Usuario.Controller
 {
     
     [ApiController] // marca a  classe como uma api controller
@@ -30,7 +29,7 @@ namespace api.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var users = await _usuarioRep.GetAllAsync(query); 
+            var users = await _usuarioRep.ObterTodosAsync(query); 
             var usersDto = users.Select(u => u.ConverterParaUsuarioDto()).OrderBy(dto => dto.id_usuario); 
 
             return Ok(usersDto);
@@ -43,7 +42,7 @@ namespace api.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var user = await _usuarioRep.GetByIdAsync(id);
+            var user = await _usuarioRep.ObterPorIdAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -88,7 +87,7 @@ namespace api.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var userModel = await _usuarioRep.UpdateProfileImage(id, updateDto);
+            var userModel = await _usuarioRep.UpdateFotoDePerfil(id, updateDto);
             if (userModel == null)
             {
                 return NotFound();
@@ -104,7 +103,7 @@ namespace api.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var userModel = await _usuarioRep.UpdatePassowrd(id, updateDto);
+            var userModel = await _usuarioRep.UpdateSenha(id, updateDto);
             if (userModel == null)
             {
                 return NotFound();

@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace api.Models
+namespace api.Usuario.Model
 {
-    public class Usuario
+    public class UsuarioModel
     {
         [Key]
         public int id_usuario { get; set; }

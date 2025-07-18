@@ -1,4 +1,4 @@
-﻿namespace api.Dtos
+﻿namespace api.Usuario.Dtos
 {
     public class AtualizarFotoDto
     {

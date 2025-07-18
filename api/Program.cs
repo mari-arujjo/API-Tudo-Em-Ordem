@@ -1,6 +1,6 @@
-using api.Data;
-using api.Interfaces;
-using api.Repository;
+using api;
+using api.Fornecedor.Repository;
+using api.Usuario.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -20,10 +20,14 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddControllers(); //chama controllers
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); //chama interface e repositorio
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//chama controllers
+builder.Services.AddControllers(); 
+//chama interfaces e repositorios
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); 
+builder.Services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+
 
 var app = builder.Build();
 

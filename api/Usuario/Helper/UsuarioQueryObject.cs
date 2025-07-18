@@ -1,4 +1,4 @@
-﻿namespace api.Helper
+﻿namespace api.Usuario.Helper
 {
     public class UsuarioQueryObject
     {
