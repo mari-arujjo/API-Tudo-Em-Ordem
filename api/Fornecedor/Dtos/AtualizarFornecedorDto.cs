@@ -36,11 +36,8 @@ namespace api.Fornecedor.Dtos
         public String rua { get; set; } = string.Empty;
 
         [Required]
-        [MinLength(1, ErrorMessage = "O número deve ter no mínimo 1 caractere.")]
-        [MaxLength(5, ErrorMessage = "Limite de caracteres: 5")]
         public int numero { get; set; }
 
-        [Required]
         [MinLength(5, ErrorMessage = "O complemento deve ter no mínimo 5 caracteres.")]
         [MaxLength(50, ErrorMessage = "Limite de caracteres: 50")]
         public String? complemento { get; set; } = string.Empty;
