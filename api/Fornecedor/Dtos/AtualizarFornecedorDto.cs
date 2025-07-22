@@ -33,7 +33,7 @@ namespace api.Fornecedor.Dtos
         [Required]
         [MinLength(5, ErrorMessage = "A rua deve ter no mínimo 5 caracteres.")]
         [MaxLength(50, ErrorMessage = "Limite de caracteres: 50")]
-        public String rua { get; set; } = string.Empty;
+        public String logradouro { get; set; } = string.Empty;
 
         [Required]
         public int numero { get; set; }

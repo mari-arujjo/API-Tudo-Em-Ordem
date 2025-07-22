@@ -12,7 +12,7 @@ namespace api.Fornecedor.Model
         public String telefone { get; set; } = string.Empty;
         public String categoria { get; set; } = string.Empty;
         public String cep { get; set; } = string.Empty;
-        public String rua { get; set; } = string.Empty;
+        public String logradouro { get; set; } = string.Empty;
         public int numero { get; set; }
         public String? complemento { get; set; } = string.Empty;
         public String bairro { get; set; } = string.Empty;

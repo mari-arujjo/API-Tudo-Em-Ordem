@@ -54,7 +54,7 @@ namespace api.Fornecedor.Repository
             fornecedorModel.email = updateDto.email;
             fornecedorModel.categoria = updateDto.categoria;
             fornecedorModel.cep = updateDto.cep;
-            fornecedorModel.rua = updateDto.rua;
+            fornecedorModel.logradouro = updateDto.logradouro;
             fornecedorModel.numero = updateDto.numero;
             fornecedorModel.complemento = updateDto.complemento;
             fornecedorModel.bairro = updateDto.bairro;
