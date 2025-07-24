@@ -5,7 +5,7 @@ namespace api.Fornecedor.Dtos
     public class CriarFornecedorDto
     {
         [Required]
-        [MinLength(18, ErrorMessage = "O CNPJ deve ter 18 caracteres. Digite no formato: XX.XXX.XXX/XXXX-XX")]
+        [MinLength(18, ErrorMessage = "O CNPJ deve ter 18 caracteres.")]
         [MaxLength(18, ErrorMessage = "Limite de caracteres: 18")]
         public String cnpj_fornecedor { get; set; } = string.Empty;
 
@@ -20,13 +20,13 @@ namespace api.Fornecedor.Dtos
         public String email { get; set; } = string.Empty;
 
         [Required]
-        [MinLength(13, ErrorMessage = "O n° de telefone deve ter 13 caracteres. Digite no formato: XX 9XXXX-XXXX")]
-        [MaxLength(13, ErrorMessage = "Limite de caracteres: 13")]
+        [MinLength(11, ErrorMessage = "O n° de telefone deve ter 11 caracteres.")]
+        [MaxLength(11, ErrorMessage = "Limite de caracteres: 11")]
         public String telefone { get; set; } = string.Empty;
         public String categoria { get; set; } = string.Empty;
 
         [Required]
-        [MinLength(9, ErrorMessage = "0 CEP deve ter 9 caracteres. Digite no formato: XXXXX-XXX")]
+        [MinLength(9, ErrorMessage = "O CEP deve ter 9 caracteres.")]
         [MaxLength(9, ErrorMessage = "Limite de caracteres: 9")]
         public String cep { get; set; } = string.Empty;
 
