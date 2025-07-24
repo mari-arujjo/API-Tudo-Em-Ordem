@@ -40,7 +40,7 @@ namespace api.Fornecedor.Dtos
 
         [MinLength(5, ErrorMessage = "O complemento deve ter no mínimo 5 caracteres.")]
         [MaxLength(50, ErrorMessage = "Limite de caracteres: 50")]
-        public String? complemento { get; set; } = string.Empty;
+        public String? complemento { get; set; }
 
         [Required]
         [MinLength(5, ErrorMessage = "O bairro deve ter no mínimo 5 caracteres.")]

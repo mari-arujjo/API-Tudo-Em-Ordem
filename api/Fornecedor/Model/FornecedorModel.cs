@@ -14,7 +14,7 @@ namespace api.Fornecedor.Model
         public String cep { get; set; } = string.Empty;
         public String logradouro { get; set; } = string.Empty;
         public int numero { get; set; }
-        public String? complemento { get; set; } = string.Empty;
+        public String? complemento { get; set; }
         public String bairro { get; set; } = string.Empty;
         public String cidade { get; set; } = string.Empty;
         public String uf { get; set; } = string.Empty;
