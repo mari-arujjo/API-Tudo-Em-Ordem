@@ -31,7 +31,7 @@ namespace api.Fornecedor.Dtos
         public String cep { get; set; } = string.Empty;
 
         [Required]
-        [MinLength(5, ErrorMessage = "A rua deve ter no mínimo 5 caracteres.")]
+        [MinLength(5, ErrorMessage = "O logradouro deve ter no mínimo 5 caracteres.")]
         [MaxLength(50, ErrorMessage = "Limite de caracteres: 50")]
         public String logradouro { get; set; } = string.Empty;
 
