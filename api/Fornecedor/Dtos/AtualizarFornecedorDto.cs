@@ -20,8 +20,8 @@ namespace api.Fornecedor.Dtos
         public String email { get; set; } = string.Empty;
 
         [Required]
-        [MinLength(11, ErrorMessage = "O n° de telefone deve ter 11 caracteres.")]
-        [MaxLength(11, ErrorMessage = "Limite de caracteres: 11")]
+        [MinLength(15, ErrorMessage = "O n° de telefone deve ter 15 caracteres.")]
+        [MaxLength(15, ErrorMessage = "Limite de caracteres: 15")]
         public String telefone { get; set; } = string.Empty;
         public String categoria { get; set; } = string.Empty;
 
