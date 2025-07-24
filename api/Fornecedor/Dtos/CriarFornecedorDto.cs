@@ -38,8 +38,7 @@ namespace api.Fornecedor.Dtos
         [Required]
         public int numero { get; set; }
 
-        [MinLength(5, ErrorMessage = "O complemento deve ter no mínimo 5 caracteres.")]
-        [MaxLength(50, ErrorMessage = "Limite de caracteres: 50")]
+        [ComplementoValidador]
         public String? complemento { get; set; }
 
         [Required]
