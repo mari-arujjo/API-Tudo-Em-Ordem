@@ -1,4 +1,5 @@
 ﻿using api.Fornecedor.Dtos;
+using api.Fornecedor.Helper;
 using api.Fornecedor.Model;
 using api.Fornecedor.Repository;
 using Microsoft.AspNetCore.Components.Forms;
@@ -17,9 +18,10 @@ namespace api.Fornecedor.Controller
         }
 
         [HttpGet]
-        public async Task<IActionResult> ObterTodos()
+        public async Task<IActionResult> ObterTodos([FromQuery] FornecedorQueryObject query)
         {
-            var fornecedores = await _fornecedorRepository.ObterTodosAsync();
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+            var fornecedores = await _fornecedorRepository.ObterTodosAsync(query);
             var fornecedoresDto = fornecedores.Select(f => f.ConverterParaFornecedorDto());
             return Ok(fornecedoresDto);
         }
