@@ -2,7 +2,9 @@
 using api.AppUser.Model;
 using api.Fornecedor.Repository;
 using api.Usuario.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -22,6 +24,23 @@ builder.Services.AddIdentity<AppUserModel, IdentityRole>(options =>
     options.Password.RequireNonAlphanumeric = false; // caracteres especiais obrigatorios na senha
     options.Password.RequiredLength = 5; // tamanho minimo da senha
 }).AddEntityFrameworkStores<ApplicationDBContext>();
+
+//Configura o JWT
+builder.Services.AddAuthentication(options =>
+{
+   options.DefaultAuthenticateScheme =
+   options.DefaultChallengeScheme =
+   options.DefaultForbidScheme =
+   options.DefaultScheme = 
+   options.DefaultSignInScheme =
+   options.DefaultSignOutScheme = JwtBearerDefaults.AuthenticationScheme; 
+}).AddJwtBearer(options => {
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true, // valida a chave de assinatura do token 
+        ValidIssuer = builder.Configuration["Jwt:Issuer"], // emissor do token
+    }
+});
 
 
 // HABILITAR CORS
