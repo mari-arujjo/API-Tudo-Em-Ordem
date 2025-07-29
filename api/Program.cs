@@ -5,6 +5,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using api.Fornecedor.Dtos;
 using Microsoft.AspNetCore.Builder;
+using api.AppUserIdentity.Model;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +18,7 @@ builder.Services.AddDbContext<ApplicationDBContext>(options => {
 });
 
 // Configura o Identity
-builder.Services.AddIdentity<AppUserModel, IdentityRole>(options =>
+builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
     options.Password.RequireDigit = false; // numeros obrigatorios na senha
     options.Password.RequireLowercase = false; // letras minusculas obrigatorias na senha
@@ -37,7 +41,7 @@ builder.Services.AddAuthentication(options =>
     {
         ValidateIssuerSigningKey = true, // valida a chave de assinatura do token 
         ValidIssuer = builder.Configuration["Jwt:Issuer"], // emissor do token
-    }
+    };
 });
 
 // HABILITAR CORS

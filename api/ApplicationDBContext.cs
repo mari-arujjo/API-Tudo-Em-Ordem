@@ -1,14 +1,16 @@
 ﻿using api.Fornecedor.Model;
 using api.Usuario.Model;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlTypes;
+using api.AppUserIdentity.Model;
 
 namespace api
 
 {
     //classe gigante que permite a pesquisa sua tabelas individuais
     //especifica qual tabela vai virar objeto com EntinyFramework
-    public class ApplicationDBContext : IdentityDbContext<AppUser.Model.AppUser>
+    public class ApplicationDBContext : IdentityDbContext<AppUser>
     {
 
         // CONSTRUTOR
