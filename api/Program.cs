@@ -1,8 +1,14 @@
-using api;
+ using api;
+using api.AppUser.Model;
 using api.Fornecedor.Repository;
 using api.Usuario.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using api.Fornecedor.Dtos;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,9 +17,45 @@ builder.Services.AddDbContext<ApplicationDBContext>(options => {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")); //busca nas configs no json
 });
 
+// Configura o Identity
+builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
+{
+    options.Password.RequireDigit = false; // numeros obrigatorios na senha
+    options.Password.RequireLowercase = false; // letras minusculas obrigatorias na senha
+    options.Password.RequireUppercase = false; // letras maiusculas obrigatorias na senha
+    options.Password.RequireNonAlphanumeric = false; // caracteres especiais obrigatorios na senha
+    options.Password.RequiredLength = 5; // tamanho minimo da senha
+}).AddEntityFrameworkStores<ApplicationDBContext>();
+
+//Configura o JWT
+builder.Services.AddAuthentication(options =>
+{
+   options.DefaultAuthenticateScheme =
+   options.DefaultChallengeScheme =
+   options.DefaultForbidScheme =
+   options.DefaultScheme = 
+   options.DefaultSignInScheme =
+   options.DefaultSignOutScheme = JwtBearerDefaults.AuthenticationScheme; 
+}).AddJwtBearer(options => {
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true, // valida a chave de assinatura do token 
+        ValidIssuer = builder.Configuration["Jwt:Issuer"], // emissor do token
+        ValidateAudience = true, // valida o publico do token
+        ValidAudience = builder.Configuration["Jwt:Audience"], // audiencia do token
+        ValidateIssuerSigningKey = true, // valida a chave de assinatura do token
+        IssuerSigningKey = new SymmetricSecurityKey(
+            System.Text.Encoding.UTF8.GetBytes(
+                builder.Configuration["Jwt:SigningKey"] // chave de assinatura do token
+            )
+        )
+    };
+});
+
+
 // HABILITAR CORS
 builder.Services.AddCors(options =>
-{
+{  
     options.AddPolicy("PermitirLocalhost", policy =>
     {
         policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
@@ -39,6 +81,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication(); // Habilita a autenticação
+app.UseAuthorization(); // Habilita a autorização
 
 // AQUI: aplicar o CORS antes dos endpoints
 app.UseCors("PermitirLocalhost");
