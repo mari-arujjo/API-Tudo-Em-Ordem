@@ -15,30 +15,30 @@ namespace api.Fornecedor.Repository
 
         public async Task<FornecedorModel> CreateAsync(FornecedorModel fornecedorModel)
         {
-            await _dbContext.FORNECEDORES.AddAsync(fornecedorModel);
+            await _dbContext.Fornecedores.AddAsync(fornecedorModel);
             await _dbContext.SaveChangesAsync();
             return fornecedorModel;
         }
 
         public async Task<FornecedorModel?> DeleteAsync(int id)
         {
-            var fornecedorModel = await _dbContext.FORNECEDORES.FirstOrDefaultAsync(x => x.id_fornecedor == id);
+            var fornecedorModel = await _dbContext.Fornecedores.FirstOrDefaultAsync(x => x.id_fornecedor == id);
             if (fornecedorModel == null) {
                 return null;
             }
-            _dbContext.FORNECEDORES.Remove(fornecedorModel);
+            _dbContext.Fornecedores.Remove(fornecedorModel);
             _dbContext.SaveChanges();
             return fornecedorModel; 
         }
 
         public async Task<FornecedorModel?> ObterPorIdAsync(int id)
         {
-            return await _dbContext.FORNECEDORES.FindAsync(id);
+            return await _dbContext.Fornecedores.FindAsync(id);
         }
 
         public async Task<List<FornecedorModel>> ObterTodosAsync(FornecedorQueryObject query)
         {
-            var fornecedor =  _dbContext.FORNECEDORES.AsQueryable();
+            var fornecedor =  _dbContext.Fornecedores.AsQueryable();
             if (!string.IsNullOrEmpty(query.cnpj_fornecedor))
             {
                 fornecedor = fornecedor.Where( f => f.cnpj_fornecedor.Contains(query.cnpj_fornecedor));
@@ -188,7 +188,7 @@ namespace api.Fornecedor.Repository
 
         public async Task<FornecedorModel?> UpdateAsync(int id, AtualizarFornecedorDto updateDto)
         {
-            var fornecedorModel = await _dbContext.FORNECEDORES.FirstOrDefaultAsync(x => x.id_fornecedor == id);
+            var fornecedorModel = await _dbContext.Fornecedores.FirstOrDefaultAsync(x => x.id_fornecedor == id);
             if (fornecedorModel == null)
             {
                 return null;

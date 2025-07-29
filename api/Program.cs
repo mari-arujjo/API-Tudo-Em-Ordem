@@ -1,12 +1,14 @@
- using api;
-using api.AppUser.Model;
+using api;
 using api.Fornecedor.Repository;
 using api.Usuario.Repository;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using api.Fornecedor.Dtos;
+using Microsoft.AspNetCore.Builder;
+using api.AppUserIdentity.Model;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +18,7 @@ builder.Services.AddDbContext<ApplicationDBContext>(options => {
 });
 
 // Configura o Identity
-builder.Services.AddIdentity<AppUserModel, IdentityRole>(options =>
+builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
     options.Password.RequireDigit = false; // numeros obrigatorios na senha
     options.Password.RequireLowercase = false; // letras minusculas obrigatorias na senha
@@ -37,15 +39,22 @@ builder.Services.AddAuthentication(options =>
 }).AddJwtBearer(options => {
     options.TokenValidationParameters = new TokenValidationParameters
     {
-        ValidateIssuerSigningKey = true, // valida a chave de assinatura do token 
+        ValidateIssuer = true, // valida a chave de assinatura do token 
         ValidIssuer = builder.Configuration["Jwt:Issuer"], // emissor do token
-    }
+        ValidateAudience = true, // valida o publico do token
+        ValidAudience = builder.Configuration["Jwt:Audience"], // audiencia do token
+        ValidateIssuerSigningKey = true, // valida a chave de assinatura do token
+        IssuerSigningKey = new SymmetricSecurityKey(
+            System.Text.Encoding.UTF8.GetBytes(
+                builder.Configuration["Jwt:SigningKey"] // chave de assinatura do token
+            )
+        )
+    };
 });
-
 
 // HABILITAR CORS
 builder.Services.AddCors(options =>
-{
+{  
     options.AddPolicy("PermitirLocalhost", policy =>
     {
         policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
@@ -71,6 +80,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication(); // Habilita a autenticação
+app.UseAuthorization(); // Habilita a autorização
 
 // AQUI: aplicar o CORS antes dos endpoints
 app.UseCors("PermitirLocalhost");

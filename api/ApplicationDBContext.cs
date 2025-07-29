@@ -1,16 +1,16 @@
-﻿using api.AppUser.Model;
-using api.Fornecedor.Model;
+﻿using api.Fornecedor.Model;
 using api.Usuario.Model;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlTypes;
+using api.AppUserIdentity.Model;
 
 namespace api
 
 {
     //classe gigante que permite a pesquisa sua tabelas individuais
     //especifica qual tabela vai virar objeto com EntinyFramework
-    public class ApplicationDBContext : IdentityDbContext<AppUserModel>
+    public class ApplicationDBContext : IdentityDbContext<AppUser>
     {
 
         // CONSTRUTOR
@@ -22,8 +22,8 @@ namespace api
 
 
         //DbSet<T> representa uma tabela do banco de dados
-        public DbSet<UsuarioModel> USERS { get; set; } //“Pesquisa no banco a tabela USERS que guarde objetos da entidade Usuario.”
-        public DbSet<FornecedorModel> FORNECEDORES { get; set; }
+        public DbSet<UsuarioModel> Usuarios { get; set; } //“Pesquisa no banco a tabela USERS que guarde objetos da entidade Usuario.”
+        public DbSet<FornecedorModel> Fornecedores { get; set; }
 
     }
 }
