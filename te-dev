@@ -1,0 +1,68 @@
+*   [33m26a4a7f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/teste-dev[m[33m, [m[1;32mteste-dev[m[33m)[m merge da main no teste-dev
+[31m|[m[32m\[m  
+[31m|[m * [33mf1fa1fb[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m n tinha subido a appsettings
+[31m|[m * [33m630948d[m ajuste no program.cs
+[31m|[m * [33mf5b7a26[m AAAAAAAAAA ACABA LOGO
+[31m|[m * [33m6b39b88[m corrigindo conflitos
+[31m|[m * [33m284ddbf[m renomeandon para fazer com migração
+* [32m|[m [33m9b18700[m https://youtu.be/Pkeu_o8k99Q?list=PL82C6-O4XrHfrGOCPmKmwTO7M0avXyQKc&t=736
+* [32m|[m [33m0ca26f5[m INICIANDO IDENTITY + JWT
+[32m|[m[32m/[m  
+* [33mf2c6f2b[m deu bo em tudo boe! DOCKERFILE COM .NET 8
+*   [33m7419c79[m Merge branch 'main' of https://github.com/mari-arujjo/API-Ordem-De-Servico
+[33m|[m[34m\[m  
+[33m|[m * [33m6c89c66[m testando subir api sem dockerfile
+* [34m|[m [33maf68913[m mudando no dockerfile a versao do .net para o 8
+[34m|[m[34m/[m  
+* [33m16d29ca[m mudando sdk para o .net 8
+* [33m8b80cc7[m inserindo query object do fornecedor
+* [33m0a35e17[m AAAAAAAAA
+* [33m1448a9b[m melhorando validações
+* [33mb88c48c[m tomara q de certo boe
+*   [33m01458b1[m Merge branch 'main' of https://github.com/mari-arujjo/API-Ordem-De-Servico
+[35m|[m[36m\[m  
+[35m|[m * [33ma3e6ef4[m a
+* [36m|[m [33m5dedf2e[m tirando o empty do campo complemento
+[36m|[m[36m/[m  
+* [33m236ca86[m trocando "rua" por "logradouro"
+* [33mf749633[m atualização geral
+*   [33mb5691e6[m Merge branch 'main' of https://github.com/mari-arujjo/API-Ordem-De-Servico
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33m18cee5d[m migrando databse do render para o neon
+* [1;32m|[m [33m3e6862c[m validações: min e max de caracteres na atualização e criação de um fornecedor
+[1;32m|[m[1;32m/[m  
+* [33mb5a1111[m FEATURE: adicionando o crud do fornecedor
+* [33m59ca024[m atualização pacote do identity
+* [33md7aeefb[m Atualização geral
+* [33mb580e7e[m mudando foto de string para byte
+* [33m1c3849a[m AAA
+* [33m5760fb8[m atualização geral
+* [33m7fb3446[m Melhorando mensagens de erro
+* [33mdc15add[m mssgs de erro na hora de cadastrar
+* [33m26f4b62[m boe tem q dar certo
+* [33m2b3408f[m aaaaaa
+* [33m1500918[m Remove arquivos rastreados que devem ser ignorados
+* [33m8186319[m Atualização geral
+* [33m7583b88[m configurando o cors
+* [33ma50544a[m AAAAAAAAAAAA
+* [33m0a2c36e[m Update e Create com senhas hashadas
+* [33m4551461[m Atualizando .gitignore
+* [33m246046f[m Atualização geral
+*   [33m0c49380[m Finaliza merge da branch 'teste', removendo arquivos temporários
+[1;33m|[m[1;34m\[m  
+[1;33m|[m * [33m4218a23[m Adiciona .gitignore para ignorar arquivos temporários e de build
+[1;33m|[m * [33m06c276b[m feature? fazendo upload de imagem via api
+[1;33m|[m * [33m2b35010[m teste: upload de arquivos
+* [1;34m|[m [33me966969[m atualização geral
+[1;34m|[m[1;34m/[m  
+* [33md81e12d[m Atualização geral
+* [33m4f9e724[m Atualização geral
+* [33md5b3a5e[m Atualização geral
+* [33m73b9986[m Adicionando endpoint para usar no UptimeBot
+* [33mcf454fd[m Agora sim, retirando paginação
+* [33m7999db8[m Retirando paginação
+* [33m2cff372[m DEU CERTO SUBIR NO RENDERRRR
+* [33m97b6370[m Adicionando Dockerfile para tentar subir API no Render
+* [33m259122c[m Testando banco remoto com o Render e DBeaver
+* [33mef19b87[m Atualizãção geral
+* [33mc4bd964[m Subindo Repositório
