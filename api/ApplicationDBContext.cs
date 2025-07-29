@@ -1,7 +1,5 @@
-﻿using api.AppUser.Model;
-using api.Fornecedor.Model;
+﻿using api.Fornecedor.Model;
 using api.Usuario.Model;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlTypes;
 

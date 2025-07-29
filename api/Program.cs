@@ -1,10 +1,6 @@
- using api;
-using api.AppUser.Model;
+using api;
 using api.Fornecedor.Repository;
 using api.Usuario.Repository;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using api.Fornecedor.Dtos;
@@ -18,7 +14,7 @@ builder.Services.AddDbContext<ApplicationDBContext>(options => {
 });
 
 // Configura o Identity
-builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
+builder.Services.AddIdentity<AppUserModel, IdentityRole>(options =>
 {
     options.Password.RequireDigit = false; // numeros obrigatorios na senha
     options.Password.RequireLowercase = false; // letras minusculas obrigatorias na senha
@@ -39,19 +35,10 @@ builder.Services.AddAuthentication(options =>
 }).AddJwtBearer(options => {
     options.TokenValidationParameters = new TokenValidationParameters
     {
-        ValidateIssuer = true, // valida a chave de assinatura do token 
+        ValidateIssuerSigningKey = true, // valida a chave de assinatura do token 
         ValidIssuer = builder.Configuration["Jwt:Issuer"], // emissor do token
-        ValidateAudience = true, // valida o publico do token
-        ValidAudience = builder.Configuration["Jwt:Audience"], // audiencia do token
-        ValidateIssuerSigningKey = true, // valida a chave de assinatura do token
-        IssuerSigningKey = new SymmetricSecurityKey(
-            System.Text.Encoding.UTF8.GetBytes(
-                builder.Configuration["Jwt:SigningKey"] // chave de assinatura do token
-            )
-        )
-    };
+    }
 });
-
 
 // HABILITAR CORS
 builder.Services.AddCors(options =>
