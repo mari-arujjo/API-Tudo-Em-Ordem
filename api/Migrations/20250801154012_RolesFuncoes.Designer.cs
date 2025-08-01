@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using api;
@@ -11,9 +12,11 @@ using api;
 namespace api.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250801154012_RolesFuncoes")]
+    partial class RolesFuncoes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,21 +53,21 @@ namespace api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "704556df-9d1d-44ce-80d8-3b3faecf5e24",
+                            Id = "3c1ecb60-8e84-42fd-ab67-ee4fc12ed19d",
                             Name = "Adm",
                             NormalizedName = "ADM"
                         },
                         new
                         {
-                            Id = "5470cbca-0026-414a-a24c-72e605af6f65",
+                            Id = "1957d639-dcb6-4f31-91aa-424273ec4567",
                             Name = "Mod",
                             NormalizedName = "MOD"
                         },
                         new
                         {
-                            Id = "96293a53-c86e-4e28-a35a-1f4d627bf17b",
+                            Id = "a7498ef6-3bc1-4439-a929-0ef82c315e4b",
                             Name = "Default",
-                            NormalizedName = "DEF"
+                            NormalizedName = "Def"
                         });
                 });
 

@@ -38,8 +38,8 @@ namespace api
                     NormalizedName = "MOD"
                 },
                 new IdentityRole {
-                    Name = "Def",
-                    NormalizedName = "Def"
+                    Name = "Default",
+                    NormalizedName = "DEF"
                 },
             };
             builder.Entity<IdentityRole>().HasData(funcoes);

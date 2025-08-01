@@ -30,16 +30,25 @@ namespace api.AppUserIdentity.Controller
                 };
 
                 var userCriado = await _userManager.CreateAsync(appUser, registroUserDto.senha);
-                return (IActionResult)userCriado;
-                //var userCriado = await _userManager.CreateAsync(appUser, registroUserDto.senha);
-                //if (userCriado.Succeeded)
-                //{
-
-                //}
+                if (userCriado.Succeeded)
+                {
+                    var funcaoAtribuida = await _userManager.AddToRoleAsync(appUser, "Default");
+                    if (funcaoAtribuida.Succeeded) {
+                        return Ok("Usuário criado");
+                    }
+                    else
+                    {
+                        return StatusCode(500, funcaoAtribuida.Errors);
+                    }
+                }
+                else
+                {
+                    return StatusCode(500, userCriado.Errors);
+                }
 
             } catch (Exception e)
             {
-                throw;
+                return StatusCode(500, e);
             }
 
         }
