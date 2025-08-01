@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlTypes;
 using api.AppUserIdentity.Model;
+using Microsoft.AspNetCore.Identity;
 
 namespace api
 
@@ -24,6 +25,25 @@ namespace api
         //DbSet<T> representa uma tabela do banco de dados
         public DbSet<UsuarioModel> Usuarios { get; set; } //“Pesquisa no banco a tabela USERS que guarde objetos da entidade Usuario.”
         public DbSet<FornecedorModel> Fornecedores { get; set; }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            List<IdentityRole> funcoes = new List<IdentityRole> {
+                new IdentityRole {
+                    Name = "Adm",
+                    NormalizedName = "ADM"
+                },
+                new IdentityRole {
+                    Name = "Mod",
+                    NormalizedName = "MOD"
+                },
+                new IdentityRole {
+                    Name = "Def",
+                    NormalizedName = "Def"
+                },
+            };
+            builder.Entity<IdentityRole>().HasData(funcoes);
+        }
 
     }
 }
