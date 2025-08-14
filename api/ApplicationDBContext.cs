@@ -38,7 +38,7 @@ namespace api
                     NormalizedName = "MOD"
                 },
                 new IdentityRole {
-                    Name = "Default",
+                    Name = "Def",
                     NormalizedName = "DEF"
                 },
             };

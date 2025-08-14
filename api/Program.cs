@@ -9,6 +9,7 @@ using api.AppUserIdentity.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using api.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -64,8 +65,9 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //chama controllers
-builder.Services.AddControllers(); 
+builder.Services.AddControllers();
 //chama interfaces e repositorios
+builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); 
 builder.Services.AddScoped<IFornecedorRepository, FornecedorRepository>();
 

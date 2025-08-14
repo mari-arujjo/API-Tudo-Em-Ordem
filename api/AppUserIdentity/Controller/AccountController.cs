@@ -1,5 +1,6 @@
 ﻿using api.AppUserIdentity.Dtos;
 using api.AppUserIdentity.Model;
+using api.Service;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +11,11 @@ namespace api.AppUserIdentity.Controller
     public class AccountController : ControllerBase
     {
         private readonly UserManager<AppUser> _userManager;
-        public AccountController(UserManager<AppUser> userManager)
+        private readonly ITokenService _tokenService;
+        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService)
         {
             _userManager = userManager;
+            _tokenService = tokenService;
         }
 
         [HttpPost("register")]
@@ -32,9 +35,16 @@ namespace api.AppUserIdentity.Controller
                 var userCriado = await _userManager.CreateAsync(appUser, registroUserDto.senha);
                 if (userCriado.Succeeded)
                 {
-                    var funcaoAtribuida = await _userManager.AddToRoleAsync(appUser, "Default");
+                    var funcaoAtribuida = await _userManager.AddToRoleAsync(appUser, "Def");
                     if (funcaoAtribuida.Succeeded) {
-                        return Ok("Usuário criado");
+                        return Ok(
+                            new NewUserDto
+                            {
+                                username = appUser.UserName,
+                                email = appUser.Email,
+                                token = _tokenService.CriarToken(appUser)
+                            }
+                        );
                     }
                     else
                     {
@@ -48,7 +58,7 @@ namespace api.AppUserIdentity.Controller
 
             } catch (Exception e)
             {
-                return StatusCode(500, e);
+                return BadRequest(e.Message);
             }
 
         }
