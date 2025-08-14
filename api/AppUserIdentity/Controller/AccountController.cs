@@ -35,8 +35,8 @@ namespace api.AppUserIdentity.Controller
                 var userCriado = await _userManager.CreateAsync(appUser, registroUserDto.senha);
                 if (userCriado.Succeeded)
                 {
-                    var funcaoAtribuida = await _userManager.AddToRoleAsync(appUser, "Def");
-                    if (funcaoAtribuida.Succeeded) {
+                    var roleAtribuida = await _userManager.AddToRoleAsync(appUser, "Def");
+                    if (roleAtribuida.Succeeded) {
                         return Ok(
                             new NewUserDto
                             {
@@ -48,7 +48,7 @@ namespace api.AppUserIdentity.Controller
                     }
                     else
                     {
-                        return StatusCode(500, funcaoAtribuida.Errors);
+                        return StatusCode(500, roleAtribuida.Errors);
                     }
                 }
                 else

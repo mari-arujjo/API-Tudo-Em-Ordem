@@ -28,7 +28,7 @@ namespace api
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            List<IdentityRole> funcoes = new List<IdentityRole> {
+            List<IdentityRole> roles = new List<IdentityRole> {
                 new IdentityRole {
                     Name = "Adm",
                     NormalizedName = "ADM"
@@ -42,7 +42,7 @@ namespace api
                     NormalizedName = "DEF"
                 },
             };
-            builder.Entity<IdentityRole>().HasData(funcoes);
+            builder.Entity<IdentityRole>().HasData(roles);
         }
 
     }
