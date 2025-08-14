@@ -35,13 +35,12 @@ namespace api.AppUserIdentity.Controller
             return Ok(
                 new NewUserDto
                 {
+                    nome = user.nome,
                     username = user.UserName,
                     email = user.Email,
                     token = _tokenService.CriarToken(user)
                 }
             );
-
-
         }
 
         [HttpPost("registro")]
@@ -53,6 +52,7 @@ namespace api.AppUserIdentity.Controller
 
                 var appUser = new AppUser
                 {
+                    nome = registroUserDto.nome,
                     UserName = registroUserDto.username,
                     Email = registroUserDto.email,
 
@@ -66,6 +66,7 @@ namespace api.AppUserIdentity.Controller
                         return Ok(
                             new NewUserDto
                             {
+                                nome = appUser.nome,
                                 username = appUser.UserName,
                                 email = appUser.Email,
                                 token = _tokenService.CriarToken(appUser)
