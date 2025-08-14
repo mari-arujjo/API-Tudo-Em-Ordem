@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace api.Fornecedor.Controller
 {
     [ApiController]
-    [Route("api/fornecedor")]
+    [Route("OrdemDeServico/fornecedor")]
     public class FornecedorController : ControllerBase
     {
         private readonly IFornecedorRepository _fornecedorRepository;

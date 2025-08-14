@@ -4,7 +4,7 @@ namespace api.Controller
 {
 
     [ApiController]
-    [Route("api/testeConexao")]
+    [Route("OrdemDeServico/testeConexao")]
 
     public class TesteConexaoController : ControllerBase
     {
