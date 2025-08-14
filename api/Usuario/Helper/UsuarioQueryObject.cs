@@ -1,4 +1,5 @@
-﻿namespace api.Usuario.Helper
+﻿/*
+namespace api.Usuario.Helper
 {
     public class UsuarioQueryObject
     {
@@ -13,3 +14,4 @@
         //public int tam_pag { get; set; } = 5; // qnt de elemntos por pag
     } 
 }
+*/

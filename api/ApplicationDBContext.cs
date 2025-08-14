@@ -1,5 +1,4 @@
 ﻿using api.Fornecedor.Model;
-using api.Usuario.Model;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlTypes;
@@ -23,7 +22,6 @@ namespace api
 
 
         //DbSet<T> representa uma tabela do banco de dados
-        public DbSet<UsuarioModel> Usuarios { get; set; } //“Pesquisa no banco a tabela USERS que guarde objetos da entidade Usuario.”
         public DbSet<FornecedorModel> Fornecedores { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {

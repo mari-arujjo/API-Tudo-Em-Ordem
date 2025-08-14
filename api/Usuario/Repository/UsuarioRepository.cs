@@ -1,4 +1,5 @@
-﻿using api.Controllers;
+﻿/*
+using api.Controllers;
 using api.Usuario.Dtos;
 using api.Usuario.Helper;
 using api.Usuario.Model;
@@ -156,3 +157,4 @@ namespace api.Usuario.Repository
 
     }
 }
+*/

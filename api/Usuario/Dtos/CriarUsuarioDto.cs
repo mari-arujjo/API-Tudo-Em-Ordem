@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿/*
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
@@ -30,3 +31,4 @@ namespace api.Usuario.Dtos
         public string senha { get; set; } = string.Empty;
     }
 }
+*/

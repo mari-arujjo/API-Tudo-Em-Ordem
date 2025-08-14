@@ -1,4 +1,5 @@
-﻿using api.Usuario.Dtos;
+﻿/*
+using api.Usuario.Dtos;
 
 namespace api.Usuario.Model
 {
@@ -34,3 +35,4 @@ namespace api.Usuario.Model
 
     }
 }
+*/

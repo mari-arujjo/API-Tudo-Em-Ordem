@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿/*
+using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controller
 {
@@ -23,7 +24,7 @@ namespace api.Controller
             {
                 if (_dbContext.Database.CanConnect())
                 {
-                    return Ok("Concetado ao banco com sucesso");
+                    return Ok("Conectado ao banco com sucesso");
                 }
                 else
                 {
@@ -39,3 +40,4 @@ namespace api.Controller
 
     }
 }
+*/

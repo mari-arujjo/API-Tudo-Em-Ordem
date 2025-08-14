@@ -1,4 +1,5 @@
-﻿using api.Usuario.Dtos;
+﻿/*
+using api.Usuario.Dtos;
 using api.Usuario.Helper;
 using api.Usuario.Model;
 
@@ -15,3 +16,4 @@ namespace api.Usuario.Repository
         Task<UsuarioModel?> UpdateSenha(int id, AtualizarSenhaDto updateDto);
     }
 }
+*/

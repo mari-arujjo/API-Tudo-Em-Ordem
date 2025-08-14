@@ -99,7 +99,7 @@ builder.Services.AddSwaggerGen(option =>
 builder.Services.AddControllers();
 //chama interfaces e repositorios
 builder.Services.AddScoped<ITokenService, TokenService>();
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); 
+builder.Services.AddScoped<IEditarPerfilRepository, EditarPerfilRepository>(); 
 builder.Services.AddScoped<IFornecedorRepository, FornecedorRepository>();
 
 

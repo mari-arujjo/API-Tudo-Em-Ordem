@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿/*
+using System.ComponentModel.DataAnnotations;
 
 namespace api.Usuario.Dtos
 {
@@ -14,3 +15,4 @@ namespace api.Usuario.Dtos
 
     } 
 }
+*/
