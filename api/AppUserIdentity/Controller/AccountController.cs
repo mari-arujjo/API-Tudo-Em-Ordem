@@ -1,8 +1,10 @@
 ﻿using api.AppUserIdentity.Dtos;
 using api.AppUserIdentity.Model;
 using api.Service;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace api.AppUserIdentity.Controller
 {
@@ -12,14 +14,38 @@ namespace api.AppUserIdentity.Controller
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;
-        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService)
+        private readonly SignInManager<AppUser> _signIn;
+        public AccountController(UserManager<AppUser> userManager, ITokenService tokenService, SignInManager<AppUser> signIn)
         {
             _userManager = userManager;
             _tokenService = tokenService;
+            _signIn = signIn;
         }
 
-        [HttpPost("register")]
-        public async Task<IActionResult> Registrar([FromBody] RegistroUserDto registroUserDto)
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(LoginDto loginDto)
+        {
+            if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            var user = await _userManager.Users.FirstOrDefaultAsync(x => x.UserName == loginDto.username.ToLower());
+            if (user == null) return Unauthorized("Usuário inválido!");
+            var result = await _signIn.CheckPasswordSignInAsync(user, loginDto.senha, false);
+            if (!result.Succeeded) return Unauthorized("Usuário não encontrado e/ou senha incorreta!");
+
+            return Ok(
+                new NewUserDto
+                {
+                    username = user.UserName,
+                    email = user.Email,
+                    token = _tokenService.CriarToken(user)
+                }
+            );
+
+
+        }
+
+        [HttpPost("registro")]
+        public async Task<IActionResult> RegistrarNovoUsuario([FromBody] RegistroUserDto registroUserDto)
         {
             try
             {
