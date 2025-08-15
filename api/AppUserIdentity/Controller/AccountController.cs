@@ -22,6 +22,15 @@ namespace api.AppUserIdentity.Controller
             _signIn = signIn;
         }
 
+        [HttpGet("obterTodos")]
+        public async Task<IActionResult> ObterTodos()
+        {
+            var users = await _userManager.Users.ToListAsync();
+            var usersDto = users.Select(u => u.ConverterParaUserDto());
+            return Ok(usersDto);
+        }
+        
+
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
