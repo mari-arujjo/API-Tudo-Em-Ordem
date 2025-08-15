@@ -9,6 +9,7 @@ namespace api.AppUserIdentity.Model
         {
             return new AppUserDto
             {
+                id = appUser.Id,
                 nome = appUser.nome,
                 username = appUser.UserName,
                 email = appUser.Email
