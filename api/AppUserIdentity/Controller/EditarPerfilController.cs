@@ -10,7 +10,7 @@ namespace api.Usuario.Controller
 {
     
     [ApiController]
-    [Route("OrdemDeServico/account/editarPerfil")]
+    [Route("OrdemPro/account/editarPerfil")]
     [Authorize]
     public class EditarPerfilController : ControllerBase 
     {

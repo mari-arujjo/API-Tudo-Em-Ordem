@@ -11,7 +11,7 @@ namespace api.Usuario.Controller
 {
     
     [ApiController] // marca a  classe como uma api controller
-    [Route("OrdemDeServico/usuario")]
+    [Route("OrdemPro/usuario")]
 
 
     // herda funcionalidades básicas de um controlador da ASP.NET

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace api.AppUserIdentity.Controller
 {
     [ApiController]
-    [Route("OrdemDeServico/account")]
+    [Route("OrdemPro/account")]
     public class AccountController : ControllerBase
     {
         private readonly UserManager<AppUser> _userManager;
