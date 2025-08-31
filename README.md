@@ -1,6 +1,6 @@
 # ASP.NET Core Web API
 
-## Esse repositório contém o processo de construção de uma Web API teste em ASP.NET Core, utilizando Entiny Framework.
+## Web API com funcionalidades CRUD completas, autenticação e controle de usuários. Utiliza ASP.NET Core, Entity Framework, Identity Framework + JWT e possui integração com PostgreSQL.
 
 ### Tutorial: https://www.youtube.com/playlist?list=PL82C6-O4XrHfrGOCPmKmwTO7M0avXyQKc
 
